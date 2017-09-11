@@ -1,0 +1,29 @@
+div.mainContainer {
+  span.navbar {
+    margin-bottom: 0.75rem;
+  }
+  div.soundcloudLinks {
+   iframe.soundCloud {
+      border: none;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+  }
+  div.vimeoLinks {
+    align-self: center;
+    iframe {
+      margin-bottom: 1rem;
+      max-width: 100%;
+      border: none;
+    }
+  }
+  div.youtubeLinks {
+    align-self: center;
+    iframe {
+      margin-bottom: 1rem;
+      display: block;
+      max-width: 100%;
+      border: none;
+    }
+  }
+}
