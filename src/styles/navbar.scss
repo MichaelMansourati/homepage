@@ -1,7 +1,11 @@
 span.navbar {
   display: block;
-  .link {
+  .leftSideLink {
     margin-right: 8px;
     // color: #8db5ac;
+  }
+  .rightSideLink {
+    float: right;
+    margin-left: 10px;
   }
 }
