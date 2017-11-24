@@ -5,7 +5,7 @@ import Navbar from '../components/navbar.js'
 import '../styles/index.scss'
 import '../styles/mainContainer.scss'
 
-const IndexPage = () =>
+export default ({ data }) =>
   <div className="mainContainer">
     <img className="topImage" src="https://i.imgur.com/oIlNfig.jpg" />
     <div className="textContainer">
@@ -21,6 +21,3 @@ const IndexPage = () =>
       </div>
     </div>
   </div>
-
-
-export default IndexPage
