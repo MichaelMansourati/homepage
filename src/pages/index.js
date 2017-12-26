@@ -2,12 +2,14 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Navbar from '../components/navbar.js'
 
+import selfie from '../images/selfie.jpg'
+
 import '../styles/index.scss'
 import '../styles/mainContainer.scss'
 
 export default ({ data }) =>
   <div className="mainContainer">
-    <img className="topImage" src="https://i.imgur.com/oIlNfig.jpg" />
+    <img className="topImage" src={selfie}/>
     <div className="textContainer">
       <Link className='homeLink' to='/'>
         <h1 id="myName" >Michael Mansourati</h1>

@@ -2,13 +2,15 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Navbar from '../components/navbar.js'
 
+import BWTuba from '../images/BWTuba.jpg'
+
 import '../styles/music.scss'
 import '../styles/mainContainer.scss'
 
 export default () =>
   <div className="mainContainer">
     <Navbar/>
-    <img className="topImage" src="https://i.imgur.com/ET3GZ6M.jpg" />
+    <img className="topImage" src={BWTuba}/>
     <div className="youtubeLinks">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/wV8rK7UTYcA" frameborder="0" allowfullscreen></iframe>
     </div>
