@@ -4,14 +4,15 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.8.12",
+    "gatsby": "^1.9.253",
     "gatsby-link": "^1.6.8",
-    "gatsby-plugin-react-helmet": "^1.0.3",
+    "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-sass": "^1.0.4",
     "gatsby-plugin-sharp": "^1.6.43",
     "gatsby-plugin-typography": "^1.7.9",
     "gatsby-source-filesystem": "^1.5.33",
     "gatsby-transformer-sharp": "^1.6.23",
+    "moment": "^2.22.1",
     "typography-theme-moraga": "^0.15.10"
   },
   "keywords": [
