@@ -5,15 +5,15 @@ import Navbar from '../components/navbar.js'
 
 import '../styles/index.scss'
 
-import dogge from '../images/dogge.jpg'
-import girderBoi from '../images/girderBoi.jpg'
-import cows from '../images/cows.jpg'
-import woodBikes from '../images/woodBikes.jpg'
-import chinatown from '../images/chinatown.jpg'
-import oldBlueCar from '../images/oldBlueCar.jpg'
-import sittingBoy from '../images/sittingBoy.jpg'
-import carmagnoleGrid from '../images/carmagnoleGrid.jpg'
-import beerStoreGrid from '../images/beerStoreGrid.jpg'
+import dogge from '../assets/photography/dogge.jpg'
+import girderBoi from '../assets/photography/girderBoi.jpg'
+import cows from '../assets/photography/cows.jpg'
+import woodBikes from '../assets/photography/woodBikes.jpg'
+import chinatown from '../assets/photography/chinatown.jpg'
+import oldBlueCar from '../assets/photography/oldBlueCar.jpg'
+import sittingBoy from '../assets/photography/sittingBoy.jpg'
+import carmagnoleGrid from '../assets/photography/carmagnoleGrid.jpg'
+import beerStoreGrid from '../assets/photography/beerStoreGrid.jpg'
 
 
 export default ({ data }) =>
