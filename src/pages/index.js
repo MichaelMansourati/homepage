@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Navbar from '../components/navbar.js'
 
-import selfie from '../images/selfie.jpg'
+import selfie from '../assets/photography/selfie.jpg'
 
 import '../styles/index.scss'
 import '../styles/mainContainer.scss'

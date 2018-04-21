@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Navbar from '../components/navbar.js'
 
-import BWTuba from '../images/BWTuba.jpg'
+import BWTuba from '../assets/photography/BWTuba.jpg'
 
 import '../styles/music.scss'
 import '../styles/mainContainer.scss'
