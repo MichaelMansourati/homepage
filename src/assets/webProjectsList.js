@@ -1,24 +1,24 @@
-import CSDash from './assets/siteScreenshots/Colourscape/colourscapeDashboard.png'
-import CSHome from './assets/siteScreenshots/Colourscape/colourscapeDashboard.png'
-import KSHome from './assets/siteScreenshots/KeithStratton/KeithStrattonHome.png'
-import KSLOW from './assets/siteScreenshots/KeithStratton/KeithStrattonListOfWorks.png'
-import ECSplash from './assets/siteScreenshots/EarCamera/EarCameraSplash.png'
-import ECAbout from './assets/siteScreenshots/EarCamera/EarCameraAbout.png'
+import CSDash from './siteScreenshots/Colourscape/colourscapeDashboard.png'
+import CSHome from './siteScreenshots/Colourscape/colourscapeDashboard.png'
+import KSHome from './siteScreenshots/KeithStratton/KeithStrattonHome.png'
+import KSLOW from './siteScreenshots/KeithStratton/KeithStrattonListOfWorks.png'
+import ECSplash from './siteScreenshots/EarCamera/EarCameraSplash.png'
+import ECAbout from './siteScreenshots/EarCamera/EarCameraAbout.png'
 
 module.exports = {
   projects: [
     {
       title: 'KEITHSTRATTON.COM',
       description:
-        'A website I built using the React.js based static site framework Gatsby.js for my friend Keith Stratton',
-      link: 'http://keithstratton.com',
+        'A website I built for a friend and colleague using Gatsby.js, a static site generator built on React.js.',
       images: [KSHome, KSLOW],
     },
     {
-      tile: 'EAR.CAMERA',
+      title: 'EAR.CAMERA',
       description:
         'A website I built using the React.js based static site framework Gatsby.js for the contemporary music collective Ear Camera, of which I am a part.',
       link: 'http://ear.camera',
+      github: 'https://github.com/MichaelMansourati/earcamera',
       images: [ECSplash, ECAbout],
     },
     {
