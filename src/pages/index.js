@@ -3,14 +3,16 @@ import Link from 'gatsby-link'
 import Navbar from '../components/navbar.js'
 import Img from 'gatsby-image'
 
-import selfie from '../assets/photography/selfie.jpg'
-
 import '../styles/index.css'
 import '../styles/mainContainer.css'
 
 export default ({ data }) => (
   <div className="mainContainer">
-    <img className="topImage" src={selfie} />
+    <Img
+      className="topImage"
+      id="index-top-image"
+      sizes={data.file.childImageSharp.sizes}
+    />
     <div className="textContainer">
       <Link className="homeLink" to="/">
         <h1 id="myName">Michael Mansourati</h1>
@@ -44,7 +46,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query IndexImageQuery {
-    file(relativePath: { eq: "/photography/selfie.jpg" }) {
+    file(relativePath: { eq: "selfie.jpg" }) {
       childImageSharp {
         sizes(maxWidth: 2000) {
           ...GatsbyImageSharpSizes_noBase64
