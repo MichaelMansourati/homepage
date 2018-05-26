@@ -8,25 +8,20 @@ import '../styles/webdev.css'
 
 const projectsArr = projects.projects
 
-const ProjectsList = (props) => {
+const ProjectsList = props => {
   const projectsArr = props.projectsArr
-  const listProjects = projectsArr.map((proj) =>
+  const listProjects = projectsArr.map(proj => (
     <div className="project">
-    <h3>{proj.title}</h3>
-    <p>
-      {proj.description}
-    </p>
-    {
-      proj.github &&
-      <p><a href={proj.github}>github repo</a></p>
-    }
-    {
-      proj.images.map((image) =>
-        <img className="webdevImg" src={image} />
-      )
-    }
+      <h3>{proj.title}</h3>
+      <p>{proj.description}</p>
+      {proj.github && (
+        <p>
+          <a href={proj.github}>github repo</a>
+        </p>
+      )}
+      {proj.images.map(image => <img className="webdevImg" src={image} />)}
     </div>
-  );
+  ))
   return <div>{listProjects}</div>
 }
 

@@ -1,41 +1,46 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Img from 'gatsby-image'
 
 import Navbar from '../components/navbar.js'
 
 import '../styles/index.css'
 
-import dogge from '../assets/photography/dogge.jpg'
-import girderBoi from '../assets/photography/girderBoi.jpg'
-import cows from '../assets/photography/cows.jpg'
-import woodBikes from '../assets/photography/woodBikes.jpg'
-import chinatown from '../assets/photography/chinatown.jpg'
-import oldBlueCar from '../assets/photography/oldBlueCar.jpg'
-import sittingBoy from '../assets/photography/sittingBoy.jpg'
-import carmagnoleGrid from '../assets/photography/carmagnoleGrid.jpg'
-import beerStoreGrid from '../assets/photography/beerStoreGrid.jpg'
+function ImagesList(props) {
+  const imgList = props.imgArr.map(
+    img =>
+      img.node.childImageSharp && (
+        <Img
+          style={{ width: 800, marginBottom: 8 }}
+          sizes={img.node.childImageSharp.sizes}
+          className="photo"
+        />
+      )
+  )
+  return <div>{imgList}</div>
+}
 
 export default ({ data }) => (
   <div className="mainContainer">
     <Navbar />
-    <img src={dogge} className="photo dogge" />
-    <img src={girderBoi} className="photo girderBoi" />
-    <img src={cows} className="photo cows" />
-    <img src={woodBikes} className="photo woodBikes" />
-    <img src={chinatown} className="photo chinatown" />
-    <img src={oldBlueCar} className="photo oldBlueCar" />
-    <img src={sittingBoy} className="photo sittingBoy" />
-    <img src={carmagnoleGrid} className="photo carmagnoleGrid" />
-    <img src={beerStoreGrid} className="photo beerStoreGrid" />
+    <ImagesList imgArr={data.allFile.edges} />
   </div>
 )
 
 export const query = graphql`
   query PhotographyQuery {
-    file(relativePath: { eq: "photography" }) {
-      childImageSharp {
-        sizes(maxWidth: 2000) {
-          ...GatsbyImageSharpSizes_noBase64
+    allFile(filter: {
+      sourceInstanceName: {
+        regex: "/photography/"
+      }
+    }) {
+      edges {
+        node {
+          childImageSharp {
+            sizes(maxWidth: 2000) {
+              ...GatsbyImageSharpSizes_noBase64
+            }
+          }
         }
       }
     }
