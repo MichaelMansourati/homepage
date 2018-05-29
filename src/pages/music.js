@@ -1,16 +1,16 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Navbar from '../components/navbar.js'
+import Img from 'gatsby-image'
 
-import BWTuba from '../assets/BWTuba.jpg'
 
 import '../styles/music.css'
 import '../styles/mainContainer.css'
 
-export default () => (
-  <div className="mainContainer">
+export default ({ data }) => (
+  <div className="main-container">
     <Navbar />
-    <img className="topImage" src={BWTuba} />
+    <Img className="topImage" sizes={data.allFile.edges[0].node.childImageSharp.sizes} />
     <div className="youtubeLinks">
       <iframe
         width="560"
@@ -105,3 +105,23 @@ export default () => (
     </div>
   </div>
 )
+
+export const query = graphql`
+  query MusicImageQuery {
+    allFile(filter: {
+      sourceInstanceName:{
+        regex: "/musicImage/"
+      }
+    }) {
+    edges {
+      node {
+        childImageSharp {
+          sizes(maxWidth: 2000) {
+            ...GatsbyImageSharpSizes_noBase64
+          }
+        }
+      }
+    }
+  }
+}
+`

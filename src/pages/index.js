@@ -6,12 +6,14 @@ import Img from 'gatsby-image'
 import '../styles/index.css'
 import '../styles/mainContainer.css'
 
+
+
 export default ({ data }) => (
-  <div className="mainContainer">
+  <div className="main-container">
     <Img
-      className="topImage"
+      className="top-image"
       id="index-top-image"
-      sizes={data.file.childImageSharp.sizes}
+      sizes={data.allFile.edges[0].node.childImageSharp.sizes}
     />
     <div className="textContainer">
       <Link className="homeLink" to="/">
@@ -46,12 +48,20 @@ export default ({ data }) => (
 
 export const query = graphql`
   query IndexImageQuery {
-    file(relativePath: { eq: "selfie.jpg" }) {
-      childImageSharp {
-        sizes(maxWidth: 2000) {
-          ...GatsbyImageSharpSizes_noBase64
+    allFile(filter: {
+      sourceInstanceName:{
+        regex: "/indexImage/"
+      }
+    }) {
+    edges {
+      node {
+        childImageSharp {
+          sizes(maxWidth: 2000) {
+            ...GatsbyImageSharpSizes_noBase64
+          }
         }
       }
     }
   }
+}
 `
