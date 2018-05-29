@@ -14,8 +14,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `assets`,
-        path: `${__dirname}/src/assets`
+        name: `indexImage`,
+        path: `${__dirname}/src/assets/indexImage`
+      }
+    },
+        {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `musicImage`,
+        path: `${__dirname}/src/assets/musicImage`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `siteScreenshots`,
+        path: `${__dirname}/src/assets/siteScreenshots`
       }
     },
     {
