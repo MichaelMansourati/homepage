@@ -8,8 +8,9 @@ import '../styles/webdev.css'
 
 
 
-const ProjectsList = props => {
+const ProjectsList = props  => {
   const projectsArr = props.projectsArr
+  console.log(props)
   const listProjects = projectsArr.map(proj => (
     <div className="project">
       <h3>{proj.title}</h3>
@@ -26,9 +27,28 @@ const ProjectsList = props => {
 }
 
 export default ({ data }) => (
-  <div className="mainContainer">
+  <div className="main-container">
     <Navbar />
     <br />
-    <ProjectsList projectsArr={projects} />
+    <ProjectsList projectsArr={ projects } data={ data.allFile.edges } />
   </div>
 )
+
+export const query = graphql`
+  query screenshots {
+    allFile(filter: {
+      sourceInstanceName: {
+        regex: "/siteScreenshots/"
+      }
+    }) {
+      edges {
+        node {
+          relativeDirectory
+          childImageSharp {
+            id
+          }
+        }
+      }
+    }
+  }
+`

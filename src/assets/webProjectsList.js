@@ -1,9 +1,10 @@
 import CSDash from './siteScreenshots/Colourscape/colourscapeDashboard.png'
-import CSHome from './siteScreenshots/Colourscape/colourscapeDashboard.png'
+import CSHome from './siteScreenshots/Colourscape/colourscapeHome.png'
 import KSHome from './siteScreenshots/KeithStratton/KeithStrattonHome.png'
 import KSLOW from './siteScreenshots/KeithStratton/KeithStrattonListOfWorks.png'
 import ECSplash from './siteScreenshots/EarCamera/EarCameraSplash.png'
 import ECAbout from './siteScreenshots/EarCamera/EarCameraAbout.png'
+
 
 module.exports = [
   {
@@ -28,8 +29,3 @@ module.exports = [
     images: [CSHome, CSDash],
   },
 ]
-
-// export const query = graphql`
-//   query screenshots {
-
-//   }
