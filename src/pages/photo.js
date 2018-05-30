@@ -11,6 +11,7 @@ function ImagesList(props) {
     img =>
       img.node.childImageSharp && (
         <Img
+          key={img.node.childImageSharp.internal.contentDigest}
           style={{ width: 800, marginBottom: 8 }}
           sizes={img.node.childImageSharp.sizes}
           className="photo"
@@ -21,7 +22,7 @@ function ImagesList(props) {
 }
 
 export default ({ data }) => (
-  <div className="mainContainer">
+  <div className="main-container">
     <Navbar />
     <ImagesList imgArr={data.allFile.edges} />
   </div>
@@ -37,6 +38,9 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
+            internal {
+              contentDigest
+            }
             sizes(maxWidth: 2000) {
               ...GatsbyImageSharpSizes_noBase64
             }
