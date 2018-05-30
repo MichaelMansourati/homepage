@@ -10,11 +10,12 @@ import '../styles/mainContainer.css'
 export default ({ data }) => (
   <div className="main-container">
     <Navbar />
-    <Img className="topImage" sizes={data.allFile.edges[0].node.childImageSharp.sizes} />
+    <Img style={{ marginBottom: 20 }} className="top-image" sizes={data.allFile.edges[0].node.childImageSharp.sizes} />
     <div className="youtubeLinks">
       <iframe
         width="560"
         height="315"
+        className="youtubeIframe"
         src="https://www.youtube.com/embed/wV8rK7UTYcA"
         frameborder="0"
         allowfullscreen

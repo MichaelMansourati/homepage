@@ -16,17 +16,17 @@ export default ({ data }) => (
       sizes={data.allFile.edges[0].node.childImageSharp.sizes}
     />
     <div className="textContainer">
-      <Link className="homeLink" to="/">
-        <h1 id="myName">Michael Mansourati</h1>
+      <Link className="home-link" to="/">
+        <h1 id="title">Michael Mansourati</h1>
       </Link>
       <div className="indexNav">
-        <Link className="leftSideLink link" to="/webdev/">
+        <Link className="left-link link" to="/webdev/">
           web dev
         </Link>
-        <Link className="leftSideLink link" to="/music/">
+        <Link className="left-link link" to="/music/">
           music
         </Link>
-        <Link className="leftSideLink link" to="/photo/">
+        <Link className="left-link link" to="/photo/">
           photo
         </Link>
         <a

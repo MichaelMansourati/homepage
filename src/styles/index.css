@@ -2,29 +2,24 @@ html, body {
   margin: 0;
 }
 
-/*.top-image {
-  width: 800px;
-  max-width: 100%;
-}*/
-
 div.text-container {
   margin: 0 3px;
 }
 
-.homeLink {
+.home-link {
   text-decoration: none;
   color: black;
 }
 
-#myName {
+#title {
   text-decoration: none;
 }
 
-.leftSideLink {
+.left-link {
   margin-right: 10px;
 }
 
-.rightSideLink {
+.right-link {
   float: right;
   margin-left: 10px;
 }
