@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import projects from '../assets/webProjectsList.js'
+import Img from 'gatsby-image'
 
 import Navbar from '../components/navbar.js'
 
@@ -10,7 +11,21 @@ import '../styles/webdev.css'
 
 const ProjectsList = props  => {
   const projectsArr = props.projectsArr
-  console.log(props)
+  console.log(props.data)
+  projectsArr.forEach(e => {
+    props.data.forEach(d => {
+      console.log(d.node.relativeDirectory, e.imagesDir)
+      if (d.node.relativeDirectory == e.imagesDir && d.node.childImageSharp) {
+        if (!e.images) {
+          console.log(d.node);
+          e.images = [d.node.childImageSharp.sizes];
+        } else {
+          e.images.push(d.node.childImageSharp.sizes);
+        }
+      }
+    })
+  })
+  console.log(projectsArr);
   const listProjects = projectsArr.map(proj => (
     <div className="project">
       <h3>{proj.title}</h3>
@@ -20,7 +35,7 @@ const ProjectsList = props  => {
           <a href={proj.github}>{proj.title} github repo</a>
         </p>
       )}
-      {proj.images.map(image => <img className="webdevImg" src={image} />)}
+      {proj.images.map(image => <Img sizes={image}/> )}
     </div>
   ))
   return <div>{listProjects}</div>
@@ -45,7 +60,9 @@ export const query = graphql`
         node {
           relativeDirectory
           childImageSharp {
-            id
+            sizes(maxWidth: 2000) {
+              ...GatsbyImageSharpSizes_noBase64
+            }
           }
         }
       }
