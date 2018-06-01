@@ -3,14 +3,17 @@ import Link from 'gatsby-link'
 import Navbar from '../components/navbar.js'
 import Img from 'gatsby-image'
 
-
 import '../styles/music.css'
 import '../styles/mainContainer.css'
 
 export default ({ data }) => (
   <div className="main-container">
     <Navbar />
-    <Img style={{ marginBottom: 20 }} className="top-image" sizes={data.allFile.edges[0].node.childImageSharp.sizes} />
+    <Img
+      style={{ marginBottom: 20 }}
+      className="top-image"
+      sizes={data.allFile.edges[0].node.childImageSharp.sizes}
+    />
     <div className="youtubeLinks">
       <iframe
         width="560"
@@ -109,20 +112,16 @@ export default ({ data }) => (
 
 export const query = graphql`
   query MusicImageQuery {
-    allFile(filter: {
-      sourceInstanceName:{
-        regex: "/musicImage/"
-      }
-    }) {
-    edges {
-      node {
-        childImageSharp {
-          sizes(maxWidth: 2000) {
-            ...GatsbyImageSharpSizes_noBase64
+    allFile(filter: { sourceInstanceName: { regex: "/musicImage/" } }) {
+      edges {
+        node {
+          childImageSharp {
+            sizes(maxWidth: 2000) {
+              ...GatsbyImageSharpSizes_noBase64
+            }
           }
         }
       }
     }
   }
-}
 `
