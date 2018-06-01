@@ -30,7 +30,9 @@ export default ({ data }) => (
 
 export const query = graphql`
   query PhotographyQuery {
-    allFile(filter: { sourceInstanceName: { regex: "/photography/" } }) {
+    allFile(
+    sort: { fields: [id], order: ASC }
+    filter: { sourceInstanceName: { regex: "/photography/" } }) {
       edges {
         node {
           childImageSharp {
