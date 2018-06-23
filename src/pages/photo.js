@@ -22,7 +22,7 @@ function ImagesList(props) {
 }
 
 export default ({ data }) => (
-  <div className="main-container">
+  <div>
     <Navbar />
     <ImagesList imgArr={data.allFile.edges} />
   </div>

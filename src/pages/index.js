@@ -39,7 +39,7 @@ const HomeNav = props => {
 }
 
 export default ({ data }) => (
-  <div className="main-container">
+  <div>
     <Img
       className="top-image"
       id="index-top-image"

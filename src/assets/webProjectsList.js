@@ -3,7 +3,7 @@ module.exports = [
     title: 'KEITHSTRATTON.COM',
     url: 'http://www.keithstratton.com',
     description:
-      'A website I built for a friend and colleague using Gatsby.js, a static site generator built on React.js.',
+      'A website I built for a musician using Gatsby.js, a static site generator built on React.js.',
     imagesDir: 'KeithStratton',
     images: [],
   },
