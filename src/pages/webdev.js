@@ -8,21 +8,21 @@ import Navbar from '../components/navbar.js'
 import '../styles/webdev.css'
 
 const ProjectsList = props => {
-  const projectsArr = props.projectsArr
-  projectsArr.forEach(e => {
+  props.projectsArr.forEach(e => {
     props.data.forEach(d => {
-      if (d.node.relativeDirectory == e.imagesDir && d.node.childImageSharp) {
-        if (!e.images) {
-          e.images = [d.node.childImageSharp.sizes]
-        } else {
-          e.images.push(d.node.childImageSharp.sizes)
-        }
+      if (d.node.relativeDirectory === e.imagesDir && d.node.childImageSharp) {
+        e.images.push(d.node.childImageSharp.sizes)
       }
     })
   })
-  const listProjects = projectsArr.map(proj => (
+  const listProjects = props.projectsArr.map(proj => (
     <div className="project">
-      <h3>{proj.title}</h3>
+      {proj.url && (
+        <h3>
+          <a href={proj.url}>{proj.title}</a>
+        </h3>
+      )}
+      {!proj.url && <h3>{proj.title}</h3>}
       <p>{proj.description}</p>
       {proj.github && (
         <p>
