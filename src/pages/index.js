@@ -6,8 +6,40 @@ import Img from 'gatsby-image'
 import '../styles/index.css'
 import '../styles/mainContainer.css'
 
+const links = [
+  { to: '/webdev/', name: 'web dev' },
+  { to: '/music/', name: 'music' },
+  { to: '/photo/', name: 'photo' },
+  { href: 'mailto:mail@michaelmansourati.com', name: 'contact me' },
+  { href: 'https://www.github.com/michaelmansourati', name: 'github' },
+]
+
+const HomeNav = props => {
+  const mappedLinks = props.links.map(
+    link =>
+      link.to ? (
+        <Link
+          style={{ marginRight: 10, display: 'inline' }}
+          key={link.name}
+          to={link.to}
+        >
+          {link.name}
+        </Link>
+      ) : (
+        <a
+          href={link.href}
+          style={{ float: 'right', marginLeft: 10 }}
+          key={link.name}
+        >
+          {link.name}
+        </a>
+      )
+  )
+  return <div>{mappedLinks}</div>
+}
+
 export default ({ data }) => (
-  <div className="main-container">
+  <div>
     <Img
       className="top-image"
       id="index-top-image"
@@ -15,30 +47,10 @@ export default ({ data }) => (
     />
     <div className="textContainer">
       <Link className="home-link" to="/">
-        <h1 id="title">Michael Mansourati</h1>
+        <h1 style={{ textDecoration: 'none' }}>Michael Mansourati</h1>
       </Link>
-      <div className="indexNav">
-        <Link className="left-link link" to="/webdev/">
-          web dev
-        </Link>
-        <Link className="left-link link" to="/music/">
-          music
-        </Link>
-        <Link className="left-link link" to="/photo/">
-          photo
-        </Link>
-        <a
-          className="rightSideLink link"
-          href="mailto:mail@michaelmansourati.com"
-        >
-          contact me
-        </a>
-        <a
-          className="rightSideLink link"
-          href="https://www.github.com/michaelmansourati"
-        >
-          github
-        </a>
+      <div style={{ display: 'inline' }}>
+        <HomeNav links={links} />
       </div>
     </div>
   </div>

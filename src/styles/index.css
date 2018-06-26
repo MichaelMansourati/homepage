@@ -2,26 +2,13 @@ html, body {
   margin: 0;
 }
 
-div.text-container {
+div.textContainer {
   margin: 0 3px;
 }
 
 .home-link {
   text-decoration: none;
   color: black;
-}
-
-#title {
-  text-decoration: none;
-}
-
-.left-link {
-  margin-right: 10px;
-}
-
-.right-link {
-  float: right;
-  margin-left: 10px;
 }
 
 .photo {

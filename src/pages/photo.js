@@ -22,7 +22,7 @@ function ImagesList(props) {
 }
 
 export default ({ data }) => (
-  <div className="main-container">
+  <div>
     <Navbar />
     <ImagesList imgArr={data.allFile.edges} />
   </div>
@@ -31,8 +31,9 @@ export default ({ data }) => (
 export const query = graphql`
   query PhotographyQuery {
     allFile(
-    sort: { fields: [id], order: ASC }
-    filter: { sourceInstanceName: { regex: "/photography/" } }) {
+      sort: { fields: [id], order: ASC }
+      filter: { sourceInstanceName: { regex: "/photography/" } }
+    ) {
       edges {
         node {
           childImageSharp {
