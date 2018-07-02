@@ -58,7 +58,10 @@ export default ({ data }) => (
 
 export const query = graphql`
   query IndexImageQuery {
-    allFile(filter: { sourceInstanceName: { regex: "/indexImage/" } }) {
+    allFile(filter: {
+      sourceInstanceName: { regex: "/indexImage/" },
+      extension: {regex: "/jpg/"}
+    }) {
       edges {
         node {
           childImageSharp {

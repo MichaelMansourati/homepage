@@ -5,35 +5,38 @@ const RecordingsList = props => {
     if (rec.type === 'youtube') {
       return (
         <iframe
+          key={rec.src}
           width="560"
           height="315"
           className="youtubeIframe"
           src={rec.src}
-          frameborder="0"
-          allowfullscreen
+          frameBorder="0"
+          allowFullScreen
         />
       )
     } else if (rec.type === 'soundcloud') {
       return (
         <iframe
+          key={rec.src}
           className="soundCloud"
           height="166"
           scrolling="no"
-          frameborder="no"
+          frameBorder="no"
           src={rec.src}
         />
       )
     } else if (rec.type === 'vimeo') {
       return (
         <iframe
+          key={rec.src}
           className="vimeoIframe"
           src={rec.src}
           width="640"
           height="360"
-          frameborder="0"
-          webkitallowfullscreen
-          mozallowfullscreen
-          allowfullscreen
+          frameBorder="0"
+          webkitallowFullScreen
+          mozallowFullScreen
+          allowFullScreen
         />
       )
     }
