@@ -10,6 +10,6 @@ export default ({ children }) => (
       flexDirection: 'column',
     }}
   >
-    {children()}
+    {children}
   </div>
 )

@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Navbar from '../components/navbar.js'
 import Img from 'gatsby-image'
+import Layout from '../components/layout.js'
+import { graphql } from 'gatsby'
 
 import '../styles/index.css'
 import '../styles/mainContainer.css'
@@ -38,35 +40,37 @@ const HomeNav = props => {
   return <div>{mappedLinks}</div>
 }
 
-export default ({ data }) => (
-  <div>
-    <Img
-      className="top-image"
-      id="index-top-image"
-      sizes={data.allFile.edges[0].node.childImageSharp.sizes}
-    />
-    <div className="textContainer">
-      <Link className="home-link" to="/">
-        <h1 style={{ textDecoration: 'none' }}>Michael Mansourati</h1>
-      </Link>
-      <div style={{ display: 'inline' }}>
-        <HomeNav links={links} />
+export default ({ data }) => {
+  return (
+    <Layout>
+      <div>
+        <Img
+          className="top-image"
+          id="index-top-image"
+          sizes={data.allContentfulCoverImage.edges[0].node.image.sizes}
+        />
+        <div className="textContainer">
+          <Link className="home-link" to="/">
+            <h1 style={{ textDecoration: 'none' }}>Michael Mansourati</h1>
+          </Link>
+          <div style={{ display: 'inline' }}>
+            <HomeNav links={links} />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-)
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query IndexImageQuery {
-    allFile(filter: {
-      sourceInstanceName: { regex: "/indexImage/" },
-      extension: {regex: "/jpg/"}
-    }) {
+    allContentfulCoverImage {
       edges {
         node {
-          childImageSharp {
+          id
+          image {
             sizes(maxWidth: 2000) {
-              ...GatsbyImageSharpSizes_noBase64
+              ...GatsbyContentfulSizes_noBase64
             }
           }
         }
@@ -74,3 +78,22 @@ export const query = graphql`
     }
   }
 `
+
+// export const query = graphql`
+//   query IndexImageQuery {
+//     allFile(filter: {
+//       sourceInstanceName: { regex: "/indexImage/" },
+//       extension: {regex: "/jpg/"}
+//     }) {
+//       edges {
+//         node {
+//           childImageSharp {
+//             sizes(maxWidth: 2000) {
+//               ...GatsbyImageSharpSizes_noBase64
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
