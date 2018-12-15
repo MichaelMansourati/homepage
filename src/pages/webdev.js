@@ -2,18 +2,22 @@ import React from 'react'
 import Link from 'gatsby-link'
 import projects from '../assets/webProjectsList.js'
 import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
 
 import ProjectsList from '../components/ProjectsList.js'
+import Layout from '../components/layout.js'
 import Navbar from '../components/navbar.js'
 
 import '../styles/webdev.css'
 
 export default ({ data }) => (
-  <div>
-    <Navbar />
-    <br />
-    <ProjectsList projectsArr={projects} data={data.allFile.edges} />
-  </div>
+  <Layout>
+    <div>
+      <Navbar />
+      <br />
+      <ProjectsList projectsArr={projects} data={data.allFile.edges} />
+    </div>
+  </Layout>
 )
 
 export const query = graphql`

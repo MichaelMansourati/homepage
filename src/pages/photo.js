@@ -2,32 +2,37 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import ImagesList from '../components/ImagesList.js'
+import Layout from '../components/layout.js'
+import { graphql } from 'gatsby'
 
 import Navbar from '../components/navbar.js'
 
 import '../styles/index.css'
 
-export default ({ data }) => (
-  <div>
-    <Navbar />
-    <ImagesList imgArr={data.allFile.edges} />
-  </div>
-)
+export default ({ data }) => {
+  const imgArr = data.allContentfulPhotographyImages.edges.sort((a, b) =>
+    a.node.name.localeCompare(b.node.name)
+  )
+  return (
+    <Layout>
+      <div>
+        <Navbar />
+        <ImagesList imgArr={data.allContentfulPhotographyImages.edges} />
+      </div>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query PhotographyQuery {
-    allFile(
-      sort: { fields: [id], order: ASC }
-      filter: { sourceInstanceName: { regex: "/photography/" } }
-    ) {
+    allContentfulPhotographyImages {
       edges {
         node {
-          childImageSharp {
-            internal {
-              contentDigest
-            }
+          name
+          image {
+            id
             sizes(maxWidth: 2000) {
-              ...GatsbyImageSharpSizes_noBase64
+              ...GatsbyContentfulSizes_noBase64
             }
           }
         }
