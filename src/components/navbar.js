@@ -17,13 +17,10 @@ const Navbar = () => (
     <Link className="leftSideLink" to="/photo/">
       photo
     </Link>
-    <a className="rightSideLink link" href="mailto:mail@michaelmansourati.com">
+    <a className="rightSideLink" href="mailto:mail@michaelmansourati.com">
       contact me
     </a>
-    <a
-      className="rightSideLink link"
-      href="https://www.github.com/michaelmansourati"
-    >
+    <a className="rightSideLink" href="https://www.github.com/michaelmansourati">
       github
     </a>
   </span>

@@ -1,7 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import projects from '../assets/webProjectsList.js'
-import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 
 import ProjectsList from '../components/ProjectsList.js'

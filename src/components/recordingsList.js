@@ -1,41 +1,43 @@
 import React from 'react'
 
-const RecordingsList = props => {
-  const listRecordings = props.recordings.map(rec => {
-    if (rec.type === 'youtube') {
+export default ({ recordings }) => {
+  const listRecordings = recordings.map(recording => {
+    const { type, url: {url}, title, id } = recording.node
+    if (type === 'youtube') {
       return (
         <iframe
-          key={rec.src}
+          key={id}
+          title={title}
           width="560"
           height="315"
           className="youtubeIframe"
-          src={rec.src}
+          src={url}
           frameBorder="0"
           allowFullScreen
         />
       )
-    } else if (rec.type === 'soundcloud') {
+    } else if (type === 'soundcloud') {
       return (
         <iframe
-          key={rec.src}
+          key={id}
+          title={title}
           className="soundCloud"
           height="166"
           scrolling="no"
           frameBorder="no"
-          src={rec.src}
+          src={url}
         />
       )
-    } else if (rec.type === 'vimeo') {
+    } else if (type === 'vimeo') {
       return (
         <iframe
-          key={rec.src}
+          key={id}
+          title={title}
           className="vimeoIframe"
-          src={rec.src}
+          src={url}
           width="640"
           height="360"
           frameBorder="0"
-          webkitallowFullScreen
-          mozallowFullScreen
           allowFullScreen
         />
       )
@@ -53,5 +55,3 @@ const RecordingsList = props => {
     </div>
   )
 }
-
-export default RecordingsList
