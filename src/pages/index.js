@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Navbar from '../components/navbar.js'
 import Img from 'gatsby-image'
 import Layout from '../components/layout.js'
 import { graphql } from 'gatsby'
