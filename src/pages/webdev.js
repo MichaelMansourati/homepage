@@ -1,5 +1,4 @@
 import React from 'react'
-// import projects from '../assets/webProjectsList.js'
 import { graphql } from 'gatsby'
 
 import ProjectsList from '../components/ProjectsList.js'
