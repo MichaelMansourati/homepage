@@ -1,9 +1,16 @@
 span.navbar {
   display: block;
+  display: flex;
+  justify-content: space-between;
+}
+
+span.navbar div {
+  text-overflow:
 }
 
 .leftSideLink {
   margin-right: 8px;
+  display: inline-flex;
 }
 
 .rightSideLink {

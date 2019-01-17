@@ -3,7 +3,7 @@ import Img from 'gatsby-image'
 
 const ImagesList = ({ imgArr }) => {
   return (
-    <div>
+    <div style={{'maxWidth': '100%'}}>
       {imgArr.map(
         img =>
           img.node.image && (

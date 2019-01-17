@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/navbar.js'
 import Img from 'gatsby-image'
-import recordingsList from '../assets/recordingsList'
+// import recordingsList from '../assets/recordingsList'
 import RecordingsList from '../components/recordingsList'
 import Layout from '../components/layout.js'
 import { graphql } from 'gatsby'

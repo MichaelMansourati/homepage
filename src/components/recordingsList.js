@@ -47,7 +47,7 @@ export default ({ recordings }) => {
     <div
       style={{
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column-reverse',
         alignItems: 'center',
       }}
     >
