@@ -9,7 +9,7 @@ const ImagesList = ({ imgArr }) => {
           img.node.image && (
             <Img
               key={img.node.image.id}
-              style={{ width: 800, marginBottom: 8 }}
+              style={{ width: 800, marginBottom: 8, maxWidth: '100%' }}
               sizes={img.node.image.sizes}
               className="photo"
             />

@@ -20,6 +20,7 @@ const ProjectsList = ({ projects }) => {
         )}
         {proj.images.map(image => (
           <Img
+            key={image.id}
             style={{
               width: '100%',
               marginBottom: '1rem',
