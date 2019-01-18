@@ -42,6 +42,7 @@ export default ({ recordings }) => {
         />
       )
     }
+    return ''
   })
   return (
     <div

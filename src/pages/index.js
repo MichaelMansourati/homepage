@@ -42,7 +42,7 @@ const HomeNav = props => {
 export default ({ data }) => {
   return (
     <Layout>
-      <div>
+      <div className="index-wrap">
         <Img
           className="top-image"
           id="index-top-image"

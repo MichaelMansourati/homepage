@@ -9,22 +9,19 @@ import { graphql } from 'gatsby'
 import '../styles/music.css'
 import '../styles/mainContainer.css'
 
-export default ({ data }) => {
-  console.log(data)
-  return (
-    <Layout>
-      <div>
-        <Navbar />
-        <Img
-          style={{ marginBottom: 20 }}
-          className="top-image"
-          sizes={data.allContentfulMusicImage.edges[0].node.image.sizes}
-        />
-        <RecordingsList recordings={data.allContentfulRecording.edges} />
-      </div>
-    </Layout>
-    )
-}
+export default ({ data }) => (
+  <Layout>
+    <div>
+      <Navbar />
+      <Img
+        style={{ marginBottom: 20 }}
+        className="top-image"
+        sizes={data.allContentfulMusicImage.edges[0].node.image.sizes}
+      />
+      <RecordingsList recordings={data.allContentfulRecording.edges} />
+    </div>
+  </Layout>
+)
 
 export const query = graphql`
   query MusicImageQuery {
